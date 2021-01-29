@@ -1,0 +1,140 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+form{
+  display: flex;
+  justify-content: center;
+   margin: 150px;
+  padding: 20px 50px 50px 20px;
+}
+
+
+header {
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  color: white;
+  flex-flow: column;
+  justify-content: space-around;
+ flex-flow: row;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.Menu {
+  display: flex;
+  /*el .1 es degrade*/
+  background: rgba(0, 0, 0, 0.1);
+  /*se establece en fila y que se adapte a las medidas*/
+  height: auto;
+  width: 95%;
+  align-items: center;
+  border-color: #343a40;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  border-bottom: 1px solid #343a40;
+  height: 720px;
+}
+nav a {
+  display: flex;
+  justify-content: space-around;
+  border-bottom-color: white;
+  margin: 22px;
+  padding: 4px;
+  border-bottom: 1px solid #343a40;
+}
+
+ .frame  {
+  width: 90%;
+  height: 90%;
+}
+.imagen {
+  width: 1px;
+  height: 30px;
+}
+.borde{
+  border: 2px;
+  margin:20px;
+  border-color:#2ecc71;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .Menu {
+    display: flex;
+    justify-content: center;
+    border-bottom-color: white;
+    margin: 10px;
+    padding: 2px;
+    border-bottom: 1px solid #343a40;
+    flex-flow: column;
+  }
+  .nav {
+    display: flex;
+    flex-flow: row;
+  }
+}
+
+.box td {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500px;
+}
+.box input[type="text"],
+.box input[type="password"] {
+  border: 2;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box button {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 10px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+button button[type="input"]:hover {
+  background: #b1fb07;
+}

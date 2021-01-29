@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "classmap":[
+            "dao/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9"
+    }
+}
