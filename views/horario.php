@@ -2,7 +2,6 @@
 <html lang="en">
 <html >
     <head> 
- 
         <link href='../list/main.css'>
         <link href='../timegrid/main.css'>  
         <link href='../core/main.css' rel='stylesheet' />
@@ -10,73 +9,88 @@
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <title>Horario</title> 
-        <script >
-         document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    /* Para que comience en un dia y es determinado es una propiedad
-                     defaultDate:new Date(2019,8,1),*/
-                    plugins: ['dayGrid', 'interaction', 'timeGrid', 'list'],
-
-                    header: {
-                        left: 'prev,next today Miboton',
-                        center: 'title',
-                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                    },
-                    customButtons: {
-                        Miboton: {
-                            text: "Boton",
-                            click: function () {
-                                alert("HOLA MUNDO");
-                                $('#modal').modal();
-                            }
-                        }
-                    },
-                    dateClick: function (info) {
-                       $('#Titulo').modal();
-                        $('#txtFechac').val(info.dateStr);
-                         
-
-                    },
-                    eventSources:[{
-                        events:[
-                        {
-                            title:'Conjunto2',
-                            start:'2020-06-18',
-                            color:'#FF0F0',
-                            textoColor:'#FFFFFF',
-                            all_day:false
-                        },
-                        {
-                            title:'Vectores',
-                            start:'2020-06-11',
-                            color:'#FF0F0',
-                            textoColor:'#FFFFFF',
-                            all_day:false
-                        }
-                    ]
-                    }],
-                    eventClick:function(calEvent,jsEvent,view){
-                        $('#txtTema').html(calEvent.title);
-                        $('#txtFechac').html(calEvent.start);
-                        $('#txtTextoColor').html(calEvent.textoColor);
-                        $('#txtColor').html(calEvent.Color);
-                        $('#Titulo').modal();
-
-                     }
-          });       
-            calendar.setOption('locale', 'Es');
-         calendar.render();
-     });
-
-        </script> 
+        
     </head>
-    <body class="bg-dark text-light">  
-        <header class="container"  >
-            <div  id="calendar"></div>
+    <body class=" bg-dark">
+        <div class="container ">
+            <div class="text-light" id="calendar"></div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+       // document.ready(function(){
+            var calendarEl = document.getElementById('calendar');
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        /* Para que comience en un dia y es determinado es una propiedad
+                        defaultDate:new Date(2019,8,1),*/
+                        plugins: ['dayGrid', 'interaction', 'timeGrid', 'list'],
+
+                        header: {
+                            left: 'prev,next today Miboton',
+                            center: 'title',
+                            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                        },
+                        customButtons: {
+                            Miboton: {
+                                text: "Boton",
+                                click: function () {
+                                    alert("HOLA MUNDO");
+                                    $('#modal').modal();
+                                }
+                            }
+                        },
+                        dateClick: function (info) {
+                        $('#Titulo').modal();
+                        $('#txtFechac').val(info.dateStr);
+                            
+
+                        },
+                        eventSources:[{
+                            events:[
+                                {
+                                    title:'Conjunto2',
+                                    start:'2021-02-01',
+                                    descripcion:'Aritmetica',
+                                    color:'black',
+                                    textoColor:'yellow',
+                                    //all_day:false
+                                },
+                                {
+                                    title:'Vectores',
+                                    start:'2021-02-05',
+                                    descripcion:'Fisica',
+                                    color:'#FF0F0',
+                                    textoColor:'#FFFFFF',
+                                    //all_day:false
+                                }
+                            ],  
+                        }],
+                        eventClick:function(calEvent){
+                        /*  document.getElementById('txtTema').value=calEvent.title;
+                        document.getElementById('txtFechac').value=calEvent.start;
+                            document.getElementById('txtCurso').value=calEvent.descripcion;
+                            document.getElementById('txtTextoColor').value=calEvent.textColor;
+                            document.getElementById('txtColor').value=calEvent.color;
+                        
+                            console.log(calEvent.title);
+                            $('#txtTema').val(calEvent.title);
+                            $('#txtFechac').val(calEvent.start);
+                            $('#txtCurso').val(calEvent.descripcion);
+                            $('#txtTextoColor').val(calEvent.textoColor);
+                            $('#txtColor').val(calEvent.Color); */
+                            $('#Titulo').modal();
+                        }
+            });       
+                calendar.setOption('locale', 'Es');
+            
+            calendar.render();
+        });
+
+     </script>   
+        <header class="bg-dark text-light">
+            <div class="container">
+            
             <div class="modal"  id="Titulo" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content bg-dark">
@@ -95,7 +109,7 @@
                                         <tbody >
                                             <tr>
                                                 <td> Tema</td>  
-                                                <td> <input class="form-control" type="text"  name="txtTitulo" id="txtTema"></td>
+                                                <td> <div class="form-control" type="text"  name="txtTema" id="txtTema"></div></td>
                                             </tr>
                                             <tr class="col ">
                                                 <td>  Fecha</td>  	
@@ -103,12 +117,17 @@
                                             </tr>
                                             
                                             <tr class="col ">
-                                                <td> Descripcion</td>  	
-                                                <td><input class=" form-control " type="text"  name="txtDescripcion" id="txtDescripcion"></td>
+                                                <td> Curso</td>  	
+                                                <td>
+                                                    <select class="form-control"  name="txtCurso" id ="txtCurso">
+                                                        <option value="">SELECT</option>
+                                                        <option value="">Aritmetica</option>                    
+                                                    </select>
+                                                </td>
                                             </tr>
                                             <tr class="col ">
                                                 <td>Texto</td>  
-                                                <td ><input class="form-control" type="color" name="txtColor" id="txtTextoColor" ></td>
+                                                <td ><input class="form-control" type="color" name="txtTextoColor" id="txtTextoColor" ></td>
                                             </tr>
                                             <tr class="col ">
                                                 <td>color</td>  
@@ -128,12 +147,14 @@
                 </div>
             </div>
         </header>
+    </div>
     </body>   
     <script src='../core/main.js'></script>
     <script src='../interaction/main.js'></script>
     <script src='../daygrid/main.js'></script>
     <script src='../list/main.js'></script>
     <script src='../timegrid/main.js'></script>   
-    <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <!---<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>----->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/bootstrap.js" type="text/javascript"></script>
 </html>

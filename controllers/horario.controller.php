@@ -49,12 +49,14 @@ public function listHorario($dni){
 
 public function estadoHorario(){
     $id=$_GET['id'];
-    //$est=$_GET['est'];
+    $est=$_GET['e'];
    
     if(isset($id)){
-        
+        if($est==0){
             $estado = 1;
-
+        }else{
+            $estado=0;
+        }
     $this->daoHorario->Estado($id,$estado);
     }
     header("location:../views/listar_horario.php");

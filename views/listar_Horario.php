@@ -16,7 +16,7 @@ if($sess == null || $sess==''){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <title>Profesor</title>
+    <title>Horario</title>
     <script src="https://kit.fontawesome.com/a213f9143d.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-dark text-light">
@@ -42,8 +42,8 @@ if($sess == null || $sess==''){
       <td><?php if($h->getEstado()==0)echo "proceso"; else echo "finalizado";?></td>
       <td>
         <a class="btn btn-warning" href="editar_profesor.php?id=<?php echo $h->getId();?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-        <a class="btn btn-danger" href="../controllers/horario.controller.php?a=deleteProfesor&id=<?php echo $h->getId();?>"><i class="fa fa-times" aria-hidden="true"></i></a>
-        <a class="btn btn-danger" href="../controllers/horario.controller.php?a=estadoHorario&id=<?php echo $h->getId();?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a class="btn btn-danger" href="../controllers/horario.controller.php?a=deleteHorario&id=<?php echo $h->getId();?>&e=<?php echo $h->getEstado();?>"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a class="btn btn-danger" href="../controllers/horario.controller.php?a=estadoHorario&id=<?php echo $h->getId();?>&e=<?php echo $h->getEstado();?>"><i class="fa fa-times" aria-hidden="true"></i></a>
       </td>
     </tr>
     <?php }?>

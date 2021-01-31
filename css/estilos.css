@@ -1,78 +1,63 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
 
 body {
   font-family: "Montserrat", sans-serif;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
+
 form{
   display: flex;
   justify-content: center;
-   margin: 150px;
+  margin: 150px;
   padding: 20px 50px 50px 20px;
 }
 
-
 header {
-  background-size: cover;
   display: flex;
   justify-content: center;
+  background: black;
+  padding: 25px;
 }
 
 section {
   display: flex;
-  color: white;
   flex-flow: column;
   justify-content: space-around;
- flex-flow: row;
-  border-bottom: 1px solid white;
+  flex-flow: row;
   width: 100%;
+  height: 100%;
 }
 .Menu {
   display: flex;
-  /*el .1 es degrade*/
-  background: rgba(0, 0, 0, 0.1);
   /*se establece en fila y que se adapte a las medidas*/
-  height: auto;
-  width: 95%;
+  width: 100%;
+  height: 100%;
+  background: black;
   align-items: center;
-  border-color: #343a40;
+  
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  margin: 2px;
-  border-bottom: 1px solid #343a40;
-  height: 720px;
+  margin: 5px;
+  padding:10px;
+  background: black;
+  height: 800px;
 }
 nav a {
   display: flex;
   justify-content: space-around;
-  border-bottom-color: white;
-  margin: 22px;
-  padding: 4px;
-  border-bottom: 1px solid #343a40;
+  margin: 30px;
+  padding: 8px;
+  text-decoration: none;
 }
-
- .frame  {
-  width: 90%;
-  height: 90%;
-}
+/*.frame  {
+  width: 100%;
+  height: 100%;
+}*/
 .imagen {
   width: 1px;
   height: 30px;
-}
-.borde{
-  border: 2px;
-  margin:20px;
-  border-color:#2ecc71;
 }
 
 @media (max-width: 1000px) {
@@ -84,10 +69,8 @@ nav a {
   .Menu {
     display: flex;
     justify-content: center;
-    border-bottom-color: white;
     margin: 10px;
     padding: 2px;
-    border-bottom: 1px solid #343a40;
     flex-flow: column;
   }
   .nav {

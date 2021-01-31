@@ -23,14 +23,12 @@
             	</tr>
 
             	<td> Curso</td> 
-					
                 	<td>
                     	<select class="form-control"  name="txtcurso">
                             <option value="">SELECT</option>
 						     <option value="">Aritmetica</option>                    
 						</select>
                 	</td>
-
              	<tr class="form-group col-md-6">
                 	<td>CANTIDAD DE HORAS</td>  
                  	<td><input class="form-control"type="text"  name="txtprecio" id="txtprecio" ><td>

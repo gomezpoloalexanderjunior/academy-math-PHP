@@ -58,13 +58,13 @@ class DaoHorario{
 
                 $c = $this->conexion->getConexion();
 
-                $queryAlumno = "Delete from Alumno where dni = ?";
+                $queryAlumno = "Delete from Horario where dni = ?";
                 $stm = $c->prepare($queryAlumno);
                 $stm->bindParam(1, $dni);
 
                 $stm->execute();
 
-                $queryUser = "Delete from Usuario where dni = ?";
+                $queryUser = "Delete from Horario where dni = ?";
                 $stm = $c->prepare($queryUser);
                 $stm->bindParam(1, $dni);
 
@@ -95,13 +95,13 @@ class DaoHorario{
 
                 $c = $this->conexion->getConexion();
 
-                $queryHorario = "Update Horario set estado=? where DNI = ?";
+                $queryHorario = "Update Horario set estado=? where id = ?";
     
                 
                 $stm = $c->prepare($queryHorario);
                 
-                $stm->bindParam(1,$estado);
-                $stm->bindParam(2,$id);
+                $stm->bindValue(1,$estado);
+                $stm->bindValue(2,$id);
                 $stm->execute();
         }
         public function getAlumno($dni){

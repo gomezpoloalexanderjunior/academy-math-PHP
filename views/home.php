@@ -2,8 +2,7 @@
 session_start();
 $sess=$_SESSION["txtdni"].$_SESSION["txtpwd"];
 if($sess == null || $sess==''){
-  echo "'<h2>'usted no tiene autorizacion'</h2>'";
-  die();
+  echo "'<h1>'usted no tiene autorizacion'</h1>'";
 }
 ?>
 <!DOCTYPE html>
@@ -15,13 +14,13 @@ if($sess == null || $sess==''){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link href="../css/estilos.css" rel="stylesheet" type="text/css"/>
+    
     <title>Menu</title>
     <script src="https://kit.fontawesome.com/a213f9143d.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="container bg-dark">
-
-    <header class="header" >
+<body class="bg-dark border border-danger">
+    <header class="header mb-4" >
     <div class="d-flex justify-content-around">
         <a class="social" href="#"   target="WORK"><i class="fas fa-user-alt"></i>Usuario</a>
         <a href="sesion.php" ><i class="fa fa-power-off" aria-hidden="true"></i></a>
@@ -29,9 +28,9 @@ if($sess == null || $sess==''){
     </div>
     </header>
     <section>
-        <div class="Menu " >
+        <div class="Menu mb-2">
             <nav class="nav"> 
-                <a href="#" target="WORK" id="logo">
+                <a href="#"  id="logo">
                                 LogoCorporatio
                 </a>
                 <a href="horario.php"  target="formulario" >
